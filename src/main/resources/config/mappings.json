@@ -1,0 +1,40 @@
+{
+  "properties": {
+    "zip": {
+      "type": "integer"
+    },
+    "baths": {
+      "type": "integer"
+    },
+    "city": {
+      "type": "text"
+    },
+    "sale_date": {
+      "type": "text"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "street": {
+      "type": "text"
+    },
+    "latitude": {
+      "type": "double"
+    },
+    "state": {
+      "type": "text"
+    },
+    "beds": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "text"
+    },
+    "sq__ft": {
+      "type": "integer"
+    },
+    "longitude": {
+      "type": "double"
+    }
+  }
+}
