@@ -7,7 +7,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
 
 - To index the data into the elastic search one need to create mappings json for the file. to map the key with the data type. Under 'src/main/resources/config/' this path you will   find the same file. by making valid changes into this mappings json, one can index any csv file into ElasticSearch Server.
 
-- The application built is fully dockerized. All things required to run this project are resides in the container. ElasticServer will be running along with the application           once the container is up and running.
+- The application is fully dockerized. All things required to run this project are resides in the container. ElasticServer will be running along with the application           once the container is up and running.
 
 - In the root directory of the project , there are two files placed. Dockerfile and docker-compose.yml file. Docker Compose is a tool for defining and running multi-container       Docker applications. In this application, two containers are there. one for application and another for ElasticSearch Server.
 
