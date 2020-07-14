@@ -17,7 +17,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
        
 - After successfull execution, this elastic-search-poc is up and running on you local machine.
 
-- two API are written under this project.
+- Two APIs are written in this project.
 
 1. Create Index: This api will create the index with name and file, user has provided within the requst body.
 
@@ -27,7 +27,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                  - request body :  (POSTMAN -> body -> form-data)
                                     indexName : index_name (text)
                                     csvFile   : Select_csv_file (file)
-                 - resposnse :  
+                 - response :  
                                   {
                                     "statusCode": 200,
                                     "message": "Index Created",
@@ -55,8 +55,8 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                  - CURL request :               
                                 curl --location --request POST 'http://localhost:8081/transaction/v1/index' \
                                 --header 'Content-Type: multipart/form-data' \
-                                --form 'indexName={Index_name}' \
-                                --form 'csvFile=@{File_location}'
+                                --form 'indexName=index1' \
+                                --form 'csvFile=@/data.csv'
                         
 2. Search Document: This api will Search document through the index with value you specified with respective Key.
 
@@ -113,7 +113,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                                                           }   
                                                 ]
                               }  
-                  - Cur REquest      
+                  - CURL Request:      
                                 curl --location --request POST 'http://localhost:8081/transaction/v1/indexdata' \
                                 --header 'Content-Type: application/json' \
                                 --data-raw '{
@@ -122,7 +122,9 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                                         "value":"95824",
                                         "limit":1
                                         }'       
-                                
+
+- To visualize the data into the browser you can you use 'elasticsearch head' plugin for google chrome:
+        Guide to setup elasticsearch head  : https://github.com/mobz/elasticsearch-head
                         
   
 
