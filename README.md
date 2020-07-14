@@ -20,6 +20,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
 - two API are written under this project.
 
 1. Create Index: This api will create the index with name and file, user has provided within the requst body.
+
                  - URL :   http://localhost:8081/transaction/v1/index
                  - method: POST
                  - content-type : multipart/formdata
@@ -58,6 +59,7 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                                 --form 'csvFile=@{File_location}'
                         
 2. Search Document: This api will Search document through the index with value you specified with respective Key.
+
                  - URL : http://localhost:8081/transaction/v1/indexdata
                  - method : POST
                  - Content-type : application/json
