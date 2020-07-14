@@ -59,6 +59,69 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
                         
 2. Search Document: This api will Search document through the index with value you specified with respective Key.
                  - URL : http://localhost:8081/transaction/v1/indexdata
+                 - method : POST
+                 - Content-type : application/json
+                 - request body : (POSTMAN -> body -> raw)
+                                        
+                                 {
+                                   "indexName":"{$name of the index to search through}", 
+                                   "key":"{$key will be any key from document to search for}", 
+                                   "value":"{$value for the key}", 
+                                   "limit":"{$ limit for the search rows, default is 10}"
+                                 }          
+                  - response : 
+                                {
+                                  "statusCode": 200,
+                                  "message": "Success",
+                                  "data": {
+                                                "staus": "OK",
+                                                "executionTime": {
+                                                "micros": 78000,
+                                                "microsFrac": 78000.0,
+                                                "millisFrac": 78.0,
+                                                "secondsFrac": 0.078,
+                                                "minutesFrac": 0.0013,
+                                                "hoursFrac": 2.1666666666666667E-5,
+                                                "daysFrac": 9.027777777777778E-7,
+                                                "nanos": 78000000,
+                                                "days": 0,  
+                                                "hours": 0,
+                                                "minutes": 0,
+                                                "millis": 78,
+                                                "seconds": 0,
+                                                "stringRep": "78ms"
+                                        },
+                                "successfulShards": 3,
+                                "failedShards": 0,
+                                "numberOfSearchedHints": 1,
+                                "searchResult": [
+                                                        {
+                                                                "street": "5980 79TH ST",
+                                                                "city": "SACRAMENTO",
+                                                                "zip": 95824,
+                                                                "state": "CA",
+                                                                "beds": 2,
+                                                                "baths": 1,
+                                                                "sq__ft": 868,
+                                                                "type": "Residential",
+                                                                "sale_date": "Tue May 20 00:00:00 EDT 2008",
+                                                                "price": 90000,
+                                                                "latitude": 38.518373,
+                                                                "longitude": -121.411779
+                                                          }   
+                                                ]
+                              }  
+                  - Cur REquest      
+                                curl --location --request POST 'http://localhost:8081/transaction/v1/indexdata' \
+                                --header 'Content-Type: application/json' \
+                                --data-raw '{
+                                        "indexName":"index1",
+                                        "key":"zip",
+                                        "value":"95824",
+                                        "limit":1
+                                        }'       
+                                
+                        
   
 
 
