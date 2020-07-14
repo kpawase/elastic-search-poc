@@ -12,7 +12,9 @@ A POC project for tech enthusiasts to learn how to make a use of Elasticsearch i
 - In the root directory of the project , there are two files placed. Dockerfile and docker-compose.yml file. Docker Compose is a tool for defining and running multi-container       Docker applications. In this application, two containers are there. one for application and another for ElasticSearch Server.
 
 - After cloning this application on local machine, one can directly apply docker-compose commands.
+
         - #docker-compose build: this command will build the image using Dockerfile and docker-compose file. 
+      
         - #docker-compose up: this command will create and run the container using previously built image.
        
 - After successfull execution, this elastic-search-poc is up and running on you local machine.
