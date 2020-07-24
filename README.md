@@ -3,11 +3,11 @@
 A React and Springboot based project for tech enthusiasts to learn how to make a use of Elasticsearch in the real time applications.
 
 ### Tools and Technologies : 
-        1. Java 8 : Object-oriented and modern days programming language supports stream processing. 
-        2. SpringBoot : Open-source java based framework, which provides faster and easier way to create, maintain and run the web application. 
-        3. React JS : React is an open-source JavaScript library for building user interfaces.
-        4. ElasticSearch: Elasticsearch is a search engine which provides a distributed, multitenant-capable full-text search engine with an HTTP web interface. 
-        5. Docker : Docker is a containerization tool that bundles your application and its dependencies together in to the container to ensure that your application works smoothly on any system.
+ 1. Java 8 : Object-oriented and modern days programming language supports stream processing. 
+ 2. SpringBoot : Open-source java based framework, which provides faster and easier way to create, maintain and run the web application. 
+ 3. React JS : React is an open-source JavaScript library for building user interfaces.
+ 4. ElasticSearch: Elasticsearch is a search engine which provides a distributed, multitenant-capable full-text search engine with an HTTP web interface. 
+ 5. Docker : Docker is a containerization tool that bundles your application and its dependencies together in to the container to ensure that your application works smoothly on any system.
         
 - This Spring boot project is all about indexing the csv file data into the ElasticSearch Server.
 
