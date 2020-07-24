@@ -10,6 +10,9 @@ public class ControllerContants {
 	
 	public static final String INDEX_DATA = VERSION + "/indexdata";
 	
+	public static final String getKeys = VERSION + "/keys";
+
+	
 	
 
 }

@@ -1,126 +1,85 @@
 package com.example.demo.dto;
 
-
 public class TransactionDto {
-	private String street;
-	private String city;
-	private int zip;
-	private String state;
-	private int beds;
-	private int baths;
-	private int sq__ft;
-	private String type;
-	private String sale_date;
-	private int price;
-	private double latitude;
-	private double longitude;
 
-	public TransactionDto() {
+	private String accountNo;
+	private String date;
+	private String transactionDetails;
+	private String chequeNo;
+	private String valueDate;
+	private String withdrawalAmount;
+	private String depositAmount;
+	private String balance;
+
+	public String getAccountNo() {
+		return accountNo;
 	}
 
-	public String getStreet() {
-		return street;
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public String getDate() {
+		return date;
 	}
 
-	public String getCity() {
-		return city;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public String getTransactionDetails() {
+		return transactionDetails;
 	}
 
-	public int getZip() {
-		return zip;
+	public void setTransactionDetails(String transactionDetails) {
+		this.transactionDetails = transactionDetails;
 	}
 
-	public void setZip(int zip) {
-		this.zip = zip;
+	public String getChequeNo() {
+		return chequeNo;
 	}
 
-	public String getState() {
-		return state;
+	public void setChequeNo(String chequeNo) {
+		this.chequeNo = chequeNo;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public String getValueDate() {
+		return valueDate;
 	}
 
-	public int getBeds() {
-		return beds;
+	public void setValueDate(String valueDate) {
+		this.valueDate = valueDate;
 	}
 
-	public void setBeds(int beds) {
-		this.beds = beds;
+	public String getWithdrawalAmount() {
+		return withdrawalAmount;
 	}
 
-	public int getBaths() {
-		return baths;
+	public void setWithdrawalAmount(String withdrawalAmount) {
+		this.withdrawalAmount = withdrawalAmount;
 	}
 
-	public void setBaths(int baths) {
-		this.baths = baths;
+	public String getDepositAmount() {
+		return depositAmount;
 	}
 
-	public int getSq__ft() {
-		return sq__ft;
+	public void setDepositAmount(String depositAmount) {
+		this.depositAmount = depositAmount;
 	}
 
-	public void setSq__ft(int sq__ft) {
-		this.sq__ft = sq__ft;
+	public String getBalance() {
+		return balance;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getSale_date() {
-		return sale_date;
-	}
-
-	public void setSale_date(String sale_date) {
-		this.sale_date = sale_date;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public double getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
-	}
-
-	public double getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setBalance(String balance) {
+		this.balance = balance;
 	}
 
 	@Override
 	public String toString() {
-		return "RealTransactionDto [street=" + street + ", city=" + city + ", zip=" + zip + ", state=" + state
-				+ ", beds=" + beds + ", baths=" + baths + ", sq__ft=" + sq__ft + ", type=" + type + ", sale_date="
-				+ sale_date + ", price=" + price + ", latitude=" + latitude + ", longitude=" + longitude + "]";
+		return "TransactionDto [accountNo=" + accountNo + ", date=" + date + ", transactionDetails="
+				+ transactionDetails + ", ChequeNo=" + chequeNo + ", valueDate=" + valueDate + ", withdrawalAmount="
+				+ withdrawalAmount + ", depositAmount=" + depositAmount + ", balance=" + balance + "]";
 	}
 
-	
 }
-

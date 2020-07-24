@@ -2,12 +2,14 @@ package com.example.demo.dto;
 
 public class SearchRequestDTo {
 
-	private String indexName;
-	
 	private String key;
-	
+
 	private String value;
-	
+
+	private String criteria;
+
+	private int limit;
+
 	public int getLimit() {
 		return limit;
 	}
@@ -16,18 +18,16 @@ public class SearchRequestDTo {
 		this.limit = limit;
 	}
 
-	private int limit;
-	
+	public String getCriteria() {
+		return criteria;
+	}
+
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
+	}
+
 	public SearchRequestDTo() {
 		super();
-	}
-
-	public String getIndexName() {
-		return indexName;
-	}
-
-	public void setIndexName(String indexName) {
-		this.indexName = indexName;
 	}
 
 	public String getKey() {
@@ -45,8 +45,13 @@ public class SearchRequestDTo {
 	public void setValue(String value) {
 		this.value = value;
 	}
+
+	@Override
+	public String toString() {
+		return "SearchRequestDTo [key=" + key + ", value=" + value + ", criteria=" + criteria + ", limit=" + limit
+				+ "]";
+	}
 	
 	
-	
-	
+
 }

@@ -1,40 +1,28 @@
 {
   "properties": {
-    "zip": {
-      "type": "integer"
-    },
-    "baths": {
-      "type": "integer"
-    },
-    "city": {
+    "accountNo": {
       "type": "text"
     },
-    "sale_date": {
+    "date": {
       "type": "text"
     },
-    "price": {
-      "type": "integer"
-    },
-    "street": {
+    "transactionDetails": {
       "type": "text"
     },
-    "latitude": {
-      "type": "double"
-    },
-    "state": {
+    "ChequeNo": {
       "type": "text"
     },
-    "beds": {
-      "type": "integer"
-    },
-    "type": {
+    "valueDate": {
       "type": "text"
     },
-    "sq__ft": {
-      "type": "integer"
+    "withdrawalAmount": {
+      "type": "text"
     },
-    "longitude": {
-      "type": "double"
+    "depositAmount": {
+      "type": "text"
+    },
+    "balance": {
+      "type": "text"
     }
   }
 }
