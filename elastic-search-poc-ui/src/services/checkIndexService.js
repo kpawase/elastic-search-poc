@@ -1,5 +1,3 @@
-import React from 'react';
-
 const url = 'http://localhost:8081/transaction/v1/index';
 
 class checkIndex {

@@ -14,7 +14,7 @@ class SearchIndex extends Component {
             key: 'DEFAULT',
             value: '',
             criteria: '',
-            limit: 10,
+            limit: 100,
             searchResponse: {},
             searchedRows: [],
             executionDetails: {},
@@ -53,7 +53,7 @@ class SearchIndex extends Component {
             key: 'DEFAULT',
             value: '',
             criteria: '',
-            limit: 100,
+            limit: this.state.limit,
         })
         document.getElementById("submit-form").reset();
         this.onSubmit(e);
@@ -62,7 +62,7 @@ class SearchIndex extends Component {
     onSubmit = (e) => {
 
         e.preventDefault();
-        const response = fetch('http://localhost:8081/transaction/v1/indexdata', {
+        fetch('http://localhost:8081/transaction/v1/indexdata', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ class SearchIndex extends Component {
             )
         );
 
-        if (this.state.searchedRows.length == 0)
+        if (this.state.searchedRows.length === 0)
             this.setState({ showModal: true });
 
         console.log(this.state.searchResponse);
@@ -106,7 +106,7 @@ class SearchIndex extends Component {
                                 <tr><td><label>Key:</label></td>
                                     <td>
                                         <select id="key" required defaultValue={'DEFAULT'} name='key' className="form-control form-control-sm" onChange={this.onChange}>
-                                            <option value="DEFAULT" value> -- select the key -- </option>
+                                            <option value="DEFAULT" > -- select the key -- </option>
                                             {
                                                 Object.keys(this.state.keys).map(key => {
                                                     return <option value={this.state.keys[key]} key={key}>{this.state.keys[key]}</option>
@@ -118,7 +118,7 @@ class SearchIndex extends Component {
                                 <tr> <td><label>Criteria:</label></td>
                                     <td>
                                         <select id="criteria" defaultValue={'DEFAULT'} className="form-control form-control-sm" name='criteria' onChange={this.onChange}>
-                                            <option value="DEFAULT" value> -- select the criteria -- </option>
+                                            <option value="DEFAULT" > -- select the criteria -- </option>
                                             <option value="must_match">Must Match</option>
                                             <option value="should_match">Should Match</option>
                                             <option value="must_not">Must Not</option>
@@ -139,7 +139,8 @@ class SearchIndex extends Component {
                                 </tr>
                                 <tr><td><label>Search Limit:</label></td>
                                     <td>
-                                        <select name='limit' className="form-control form-control-sm" onChange={this.onChange}>
+                                        <select name='limit' defaultValue={'DEFAULT'} className="form-control form-control-sm" onChange={this.onChange}>
+                                        <option value="DEFAULT"> -- select the key -- </option>
                                             {
                                                 Object.keys(this.state.searchLimit).map(key => {
                                                     return <option value={this.state.searchLimit[key]} key={key}>{this.state.searchLimit[key]}</option>

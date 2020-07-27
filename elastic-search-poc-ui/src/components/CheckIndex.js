@@ -5,7 +5,7 @@ class CheckIndex extends Component{
         constructor(props){
             super(props);
             this.state = {
-                 
+                indexCreationFlag:false,
                 isIndexPresent: false,
                 indexName:'No Index Present',
             }
@@ -13,6 +13,13 @@ class CheckIndex extends Component{
         }
 
         onCreateIndex = async (e) => {
+            this.setState ((state,props) =>{
+
+                return {
+                    indexCreationFlag : true,
+                }
+            })
+
             e.preventDefault();
              await fetch('http://localhost:8081/transaction/v1/index', {
                 method: 'POST',
@@ -52,7 +59,7 @@ class CheckIndex extends Component{
             return(
                 <div className="container-fluid">
                 {
-                    this.state.isIndexPresent ? <h4>[Index : {this.state.indexName}]</h4> :  <div><span>[No Index Present]</span> <button className="btn btn-primary  btn-sm" type="button" onClick={this.onCreateIndex}> Create Index </button> <br /><br /></div>
+                    this.state.isIndexPresent ? <h4>[Index : {this.state.indexName}]</h4> :  <div><span>[No Index Present]</span> <button className="btn btn-primary  btn-sm" type="button" onClick={this.onCreateIndex} disabled = {this.state.indexCreationFlag ? true : false}> Create Index </button> <br /><br /></div>
                 }
                    
                 </div>
