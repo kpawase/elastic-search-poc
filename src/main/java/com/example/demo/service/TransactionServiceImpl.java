@@ -18,8 +18,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.annotation.PostConstruct;
-
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -206,11 +204,11 @@ public class TransactionServiceImpl implements TransactionService {
 	@Override
 	public String deleteIndex() throws ServiceException {
 
-		LoggerUtil.logInfo(":::::: Deleting index...", log);
+		LoggerUtil.logInfo(":::::: Deleting index..."+indexName , log);
 		try {
 			DeleteIndexRequest deleteIndexRequest = new DeleteIndexRequest(indexName);
 			AcknowledgedResponse response = client.indices().delete(deleteIndexRequest, RequestOptions.DEFAULT);
-
+			LoggerUtil.logInfo("::::::  Index Deleted..."+indexName , log);
 			return response.toString();
 
 		} catch (Exception e) {

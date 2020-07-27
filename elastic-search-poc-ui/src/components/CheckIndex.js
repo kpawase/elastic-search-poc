@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import checkIndexService from '../services/checkIndexService';
+
+const url = 'http://localhost:8081/transaction/v1/index';
 class CheckIndex extends Component{
 
         constructor(props){
@@ -21,7 +23,7 @@ class CheckIndex extends Component{
             })
 
             e.preventDefault();
-             await fetch('http://localhost:8081/transaction/v1/index', {
+             await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,6 +44,33 @@ class CheckIndex extends Component{
                  window.alert("Index Created");
         }
 
+
+        onDeleteIndex = async (e) => {
+
+            e.preventDefault();
+             await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }).then(async response => response.json()).then((response) =>
+    
+                this.setState((state, props) => {
+    
+                    return {
+                        isIndexPresent : false,
+                        indexName : 'No Index Present',
+                        indexCreationFlag : false,
+                    }
+                }
+    
+                )
+            );
+                 window.location.reload(true);
+                 window.alert("Index Deleted");
+        }
+
+
         componentDidMount(){
             checkIndexService.checkIndexPresent().then (response => response.json()
             ).then((response) => {
@@ -59,7 +88,10 @@ class CheckIndex extends Component{
             return(
                 <div className="container-fluid">
                 {
-                    this.state.isIndexPresent ? <h4>[Index : {this.state.indexName}]</h4> :  <div><span>[No Index Present]</span> <button className="btn btn-primary  btn-sm" type="button" onClick={this.onCreateIndex} disabled = {this.state.indexCreationFlag ? true : false}> Create Index </button> <br /><br /></div>
+                    this.state.isIndexPresent ? <div><span>[Index : {this.state.indexName}] &nbsp;&nbsp;&nbsp;</span><button className="btn btn-danger  btn-sm" type="button" onClick={this.onDeleteIndex}> Delete </button> <br/> <br/></div> : 
+
+                    
+                    <div><span>[No Index Present]</span> <button className="btn btn-primary  btn-sm" type="button" onClick={this.onCreateIndex} disabled = {this.state.indexCreationFlag ? true : false}> Create Index </button> <br /><br /></div>
                 }
                    
                 </div>

@@ -11,8 +11,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-import com.example.demo.util.LoggerUtil;
-
 @SpringBootApplication(scanBasePackages = { "com.example.demo" })
 @EnableAsync
 @EnableConfigurationProperties

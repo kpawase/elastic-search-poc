@@ -19,7 +19,7 @@ public interface TransactionService {
 
 	public SearchResponseDto getIndex(SearchRequestDTo requestDTo) throws ServiceException;
 
-	String deleteIndex() throws ServiceException;
+	public String deleteIndex() throws ServiceException;
 
 }
 	
